@@ -1,4 +1,4 @@
-const {app, globalShortcut, BrowserWindow, webFrame} = require('electron');
+const {app, globalShortcut, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -29,10 +29,6 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null;
   });
-
-    webFrame.setZoomLevelLimits(1, 1);
-    webFrame.setVisualZoomLevelLimits(1, 1);
-    webFrame.setLayoutZoomLevelLimits(1, 1);
 }
 
 // This method will be called when Electron has finished
