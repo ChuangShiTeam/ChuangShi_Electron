@@ -1,10 +1,10 @@
-const {app, globalShortcut, BrowserWindow} = require('electron');
+const {app, globalShortcut, BrowserWindow, webFrame} = require('electron');
 const path = require('path');
 const url = require('url');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+var win;
 
 function createWindow () {
   // Create the browser window.
@@ -27,8 +27,12 @@ function createWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    win = null
+    win = null;
   });
+
+    webFrame.setZoomLevelLimits(1, 1);
+    webFrame.setVisualZoomLevelLimits(1, 1);
+    webFrame.setLayoutZoomLevelLimits(1, 1);
 }
 
 // This method will be called when Electron has finished
